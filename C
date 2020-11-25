@@ -1,0 +1,55 @@
+#include <stdio.h>
+#include <conio.h>
+int fac(int n)
+{
+    int i,x=1;
+    for(i=1; i<=n; i++)
+    {
+        x *= i;
+    }
+    printf("%d", x);
+}
+int prime(int n)
+{
+    int i;
+    for(i=2; i<=n-1; i++)
+    {
+        if(n%i==0)
+        {
+            printf("Not a prime number");
+            return 0;
+        }
+    }
+    printf("prime number");
+}
+int fib(int n)
+{
+    int a = 1, b = 1, i, sum;
+    printf("%d %d ",a,b);
+    for (i=2; i<=n; i++)
+    {
+        
+        sum = a + b;
+        a = b;
+        b = sum;
+        printf("%d ", sum);
+    }
+}
+int main()
+{
+    int n,op;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+    printf("choose one option: ");
+    scanf("%d", &op);
+    
+    switch(op)
+    {
+        case 1: fac(n); break;
+        case 2: prime(n); break;
+        case 3: fib(n); break;
+        default: break;
+    }
+     
+    return 0;
+}
